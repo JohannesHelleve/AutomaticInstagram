@@ -1,8 +1,9 @@
 import instaloader
+import config
 
 # Get the most liked photo in Oslo in the last day
 client = instaloader.Instaloader()
-client.login("HelleveMediaGroup@gmail.com", "Kjørdakjør")
+client.login(config.username, config.password )
 
 # Set the rate controller to sleep for 1 second between requests
 client.set_rate_controller(instaloader.RateController(sleep_time=1))
