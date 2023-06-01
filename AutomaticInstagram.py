@@ -7,6 +7,9 @@ client.login(config.username, config.password )
 
 post = instaloader.Post
 
-for post in instaloader.Hashtag.from_name(client.context, 'Oslo').get_posts():
-    # post is an instance of instaloader.Post
-    client.download_post(post, target='#Oslo')
+query = '#Oslo'
+
+results = instaloader.TopSearchResults(query, 'Oslo')
+
+client.download_post(results)
+
